@@ -1,17 +1,23 @@
 class Musica
 {
-    public string Nome { get; set; } = string.Empty;
-    public string Artista { get; set; } = string.Empty;
+    public Musica(Banda artista, string nome) // Construtor
+    {
+        Artista = artista;
+        Nome = nome;
+    }
+
+    public string Nome { get; }
+    public Banda Artista { get; }
     public int Duracao { get; set; }
     public bool Disponivel { get; set; }
     public string DescricaoResumida =>
          $"A música {Nome} pertence a banda: {Artista}";
     // usando quando o método é apenas get
 
-    public void ExibirFichaTecnica()
+    public void ExibirFichaTecnica() // Método
     {
         Console.WriteLine($"Nome: {Nome}");
-        Console.WriteLine($"Artista: {Artista}");
+        Console.WriteLine($"Artista: {Artista.Nome}");
         Console.WriteLine($"Duração: {Duracao} segundos");
         if (Disponivel)
         {
